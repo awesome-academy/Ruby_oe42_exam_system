@@ -1,33 +1,78 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  static_pages:
+    home:
+      header: "Exam System"
+      title: "Home"
+      content: "This is the home page for the exam system"
+      sign_in: "Sign in"
+  shared:
+    error_messages:
+      form: "The form contains"
+    user_info:
+      view_profile: "view my profile"
+  sessions:
+    new:
+      header: "Sign in"
+      title: "Sign in"
+      add_new_user: "Add a new user"
+    form:
+      content: "Log in"
+      remember: "Remember me on this computer"
+  layouts:
+    header:
+      title_home: "Home"
+      user: "User"
+      logout: "Logout"
+      login: "Login"
+      exam_system: "Exam system"
+      account: "Account"
+      subject: "Subjects"
+  users:
+    edit:
+      header: "Editing User"
+      conf: "Password Confirmation"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+    new:
+      header: "Add a new user"
+      title: "Add a new user"
+      buttontext: "Create a new account"
+    form:
+      name: "Name"
+      email: "Email"
+      role: "Role"
+      pass: "Password"
+      conf: "Password confirm"
+    error:
+      error: "error prohibited this user from being saved:"
+  subjects:
+    new:
+      title: "Add a new subject"
+      header: "New subject"
+      button_text: "Create a new subject"
+    form:
+      name: "Name: "
+      description: "Description: "
+      user_create_id: "User create: %{name}"
+    show:
+      user_name: "User created: "
+    index:
+      title: "Subjects"
+      header: "Subjects"
+    subject:
+      delete: "Delete"
+      sure: "Sure delete?"
+  fail: "Create user fail"
+  deleted: "Deleted"
+  fail_delete: "Can not delete"
+  user_not_found: "user not found"
+  subject_not_found: "subject not found"
+  success: "Create new user successfully"
+  please_login: "Please login"
+  danger: "Invalid  email/ password combination"
+  base_title: "Exam System"
+  login_success: "Logged in successfully"
+  error: "errors"
+  success_subject: "Create a new subject successfully"
+  fail_subject: "Create subject fail"
