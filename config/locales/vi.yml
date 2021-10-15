@@ -1,0 +1,57 @@
+vi:
+  static_pages:
+    home:
+      header: "Exam System"
+      title: "Trang chủ"
+      content: "Đây là trang chủ của Exam System"
+      sign_in: "Đăng nhập"
+  shared:
+    error_messages:
+      form: "Biểu mẫu chứa"
+    user_info:
+      view_profile: "Xem hồ sơ của tôi"
+  sessions:
+    new:
+      header: "Đăng nhập"
+      title: "Đăng nhập"
+      add_new_user: "Thêm một user mới"
+
+    form:
+      content: "Đăng nhập"
+      remember: "Hãy nhớ tôi trên máy tính này"
+  users:
+    new:
+      header: "Thêm một user mới"
+      title: "Thêm một user mới"
+      buttontext: "Tạo tài khoản mới"
+    edit:
+      header: "Chỉnh sửa User"
+      conf: "Nhập lại mật khẩu"
+      name: "Tên"
+      email: "Email"
+      password: "Mật khẩu"
+    form:
+      name: "Tên"
+      email: "Email"
+      role: "Role"
+      pass: "Mật khẩu"
+      conf: "Nhập lại mật khẩu"
+    error:
+      error: "Lỗi bị cấm lưu người dùng này:"
+  layouts:
+    header:
+      title_home: "Trang chủ"
+      user: "Người dùng"
+      logout: "Đăng xuất"
+      login: "Đăng nhập"
+      exam_system: "Hệ thống quản lý bài thi"
+      account: "Tài khoản"
+
+  fail: "Tạo người dùng không thành công"
+  user_not_found: "Người dùng không được tìm thấy"
+  success: "Tạo mới user thành công "
+  please_login: "Vui lòng đăng nhập"
+  danger: "Kết hợp email / mật khẩu không hợp lệ"
+  base_title: "Exam System"
+  login_success: "Đăng nhập thành công"
+  error: "Lỗi"
