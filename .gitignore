@@ -10,14 +10,13 @@
 !/storage/.keep
 
 /public/assets
-.byebug_history
-
+.byebug_history/
 /config/master.key
 config/database.yml
 config/credentials.yml.enc
 /public/packs
 /public/packs-test
-/node_modules
+*node_modules/*
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity

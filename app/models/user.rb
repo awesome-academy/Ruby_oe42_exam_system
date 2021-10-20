@@ -4,7 +4,10 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
+  has_many :questions, dependent: :destroy
+
   has_many :subjects, dependent: :destroy
+
   validates :name, presence: true, length: {maximum: Settings.max_name}
   validates :email, presence: true,
             length: {minimum: Settings.min_email, maximum: Settings.max_email},

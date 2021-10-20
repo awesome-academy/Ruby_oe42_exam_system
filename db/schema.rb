@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_15_123757) do
+ActiveRecord::Schema.define(version: 2021_10_26_081434) do
+
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "ans"
+    t.string "content"
+    t.binary "check"
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
 
   create_table "exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "users_id", null: false
@@ -22,11 +32,11 @@ ActiveRecord::Schema.define(version: 2021_10_15_123757) do
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "answer"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_questions_on_users_id"
+    t.string "content"
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "questions_exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -68,9 +78,10 @@ ActiveRecord::Schema.define(version: 2021_10_15_123757) do
     t.string "password_digest"
   end
 
+  add_foreign_key "answers", "questions"
   add_foreign_key "exams", "subjects", column: "subjects_id"
   add_foreign_key "exams", "users", column: "users_id"
-  add_foreign_key "questions", "users", column: "users_id"
+  add_foreign_key "questions", "users"
   add_foreign_key "questions_exams", "exams", column: "exams_id"
   add_foreign_key "questions_exams", "questions", column: "questions_id"
   add_foreign_key "subjects", "users"
