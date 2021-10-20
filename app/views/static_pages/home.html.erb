@@ -7,6 +7,7 @@
     </aside>
     <% if  current_user.suppervisor? %>
       <p><%= link_to t(".add_new_user"), signup_path %></p>
+      <p><%= link_to t(".add_new_subject"), subject_path %></p>
     <% end %>
   </div>
 <% else %>

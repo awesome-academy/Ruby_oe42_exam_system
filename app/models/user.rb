@@ -1,7 +1,10 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = Settings.valid_email_regex
-  before_save :downcase_email
   USER_PARAMS = %i(name email role password password_confirmation).freeze
+
+  before_save :downcase_email
+
+  has_many :subjects, dependent: :destroy
   validates :name, presence: true, length: {maximum: Settings.max_name}
   validates :email, presence: true,
             length: {minimum: Settings.min_email, maximum: Settings.max_email},

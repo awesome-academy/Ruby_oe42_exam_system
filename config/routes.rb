@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     get "/logout", to: "sessions#destroy"
+    get "/subject", to: "subjects#new"
+    post "/subject", to: "subjects#create"
+
     resources :users
+    resources :subjects
   end
 end

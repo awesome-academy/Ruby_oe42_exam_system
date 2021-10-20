@@ -26,6 +26,7 @@ en:
       login: "Login"
       exam_system: "Exam system"
       account: "Account"
+      subject: "Subjects"
   users:
     edit:
       header: "Editing User"
@@ -45,12 +46,33 @@ en:
       conf: "Password confirm"
     error:
       error: "error prohibited this user from being saved:"
-
+  subjects:
+    new:
+      title: "Add a new subject"
+      header: "New subject"
+      button_text: "Create a new subject"
+    form:
+      name: "Name: "
+      description: "Description: "
+      user_create_id: "User create: %{name}"
+    show:
+      user_name: "User created: "
+    index:
+      title: "Subjects"
+      header: "Subjects"
+    subject:
+      delete: "Delete"
+      sure: "Sure delete?"
   fail: "Create user fail"
+  deleted: "Deleted"
+  fail_delete: "Can not delete"
   user_not_found: "user not found"
+  subject_not_found: "subject not found"
   success: "Create new user successfully"
   please_login: "Please login"
   danger: "Invalid  email/ password combination"
   base_title: "Exam System"
   login_success: "Logged in successfully"
   error: "errors"
+  success_subject: "Create a new subject successfully"
+  fail_subject: "Create subject fail"

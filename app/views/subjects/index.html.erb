@@ -1,0 +1,9 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".header" %></h1>
+<% if @subjects.any? %>
+  <h2><%= @subjects.count %></h2>
+  <ol class="subjects">
+    <%= render @subjects %>
+  <ol>
+  <%= paginate @subjects, theme: "twitter-bootstrap-3" %>
+<% end %>

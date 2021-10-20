@@ -15,10 +15,18 @@ vi:
       header: "Đăng nhập"
       title: "Đăng nhập"
       add_new_user: "Thêm một user mới"
-
     form:
       content: "Đăng nhập"
       remember: "Hãy nhớ tôi trên máy tính này"
+  layouts:
+    header:
+      title_home: "Trang chủ"
+      user: "Người dùng"
+      logout: "Đăng xuất"
+      login: "Đăng nhập"
+      exam_system: "Hệ thống quản lý bài thi"
+      account: "Tài khoản"
+      subject: "Subjects "
   users:
     new:
       header: "Thêm một user mới"
@@ -38,20 +46,41 @@ vi:
       conf: "Nhập lại mật khẩu"
     error:
       error: "Lỗi bị cấm lưu người dùng này:"
-  layouts:
-    header:
-      title_home: "Trang chủ"
-      user: "Người dùng"
-      logout: "Đăng xuất"
-      login: "Đăng nhập"
-      exam_system: "Hệ thống quản lý bài thi"
-      account: "Tài khoản"
+  subjects:
+    new:
+      title: "Thêm một subject mới "
+      header: "Mới subject"
+      button_text: "Tạo một subject mới"
+    form:
+      name: "Tên subject: "
+      description: "Mô tả: "
+      user_create_id: "User tạo %{name}"
+    show:
+      user_name: "Tên người tạo"
+    index:
+      title: "Subjects"
+      header: "Subjects"
+    subject:
+      delete: "Xoa"
+      sure: "Chac chan xoa?"
+  activerecord:
+    errors:
+      models:
+        subject:
+          attributes:
+            user:
+              required: "Lỗi"
 
   fail: "Tạo người dùng không thành công"
   user_not_found: "Người dùng không được tìm thấy"
+  subject_not_fount: "Subject khong duoc tim thay"
   success: "Tạo mới user thành công "
   please_login: "Vui lòng đăng nhập"
   danger: "Kết hợp email / mật khẩu không hợp lệ"
   base_title: "Exam System"
   login_success: "Đăng nhập thành công"
   error: "Lỗi"
+  success_subject: "Tạo mới subject thành công "
+  fail_subject: "Tạo subject không thành công"
+  deleted: "Xóa"
+  fail_delete: "Không thể xóa"
