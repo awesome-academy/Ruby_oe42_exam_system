@@ -10,33 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_15_123757) do
+ActiveRecord::Schema.define(version: 2021_10_28_034200) do
 
-  create_table "exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "users_id", null: false
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "ans"
+    t.string "content"
+    t.binary "check"
+    t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "subjects_id", null: false
-    t.index ["subjects_id"], name: "index_exams_on_subjects_id"
-    t.index ["users_id"], name: "index_exams_on_users_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "subject_id", null: false
+    t.index ["subject_id"], name: "index_exams_on_subject_id"
+    t.index ["user_id"], name: "index_exams_on_user_id"
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "answer"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_questions_on_users_id"
+    t.string "content"
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "questions_exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "exams_id", null: false
-    t.bigint "questions_id", null: false
+    t.bigint "exam_id", null: false
+    t.bigint "question_id", null: false
     t.float "score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["exams_id"], name: "index_questions_exams_on_exams_id"
-    t.index ["questions_id"], name: "index_questions_exams_on_questions_id"
+    t.index ["exam_id"], name: "index_questions_exams_on_exam_id"
+    t.index ["question_id"], name: "index_questions_exams_on_question_id"
   end
 
   create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -49,14 +59,14 @@ ActiveRecord::Schema.define(version: 2021_10_15_123757) do
   end
 
   create_table "tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "users_id", null: false
-    t.bigint "exams_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "exam_id", null: false
     t.datetime "time_test"
     t.float "total_score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["exams_id"], name: "index_tests_on_exams_id"
-    t.index ["users_id"], name: "index_tests_on_users_id"
+    t.index ["exam_id"], name: "index_tests_on_exam_id"
+    t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -68,12 +78,13 @@ ActiveRecord::Schema.define(version: 2021_10_15_123757) do
     t.string "password_digest"
   end
 
-  add_foreign_key "exams", "subjects", column: "subjects_id"
-  add_foreign_key "exams", "users", column: "users_id"
-  add_foreign_key "questions", "users", column: "users_id"
-  add_foreign_key "questions_exams", "exams", column: "exams_id"
-  add_foreign_key "questions_exams", "questions", column: "questions_id"
+  add_foreign_key "answers", "questions"
+  add_foreign_key "exams", "subjects"
+  add_foreign_key "exams", "users"
+  add_foreign_key "questions", "users"
+  add_foreign_key "questions_exams", "exams"
+  add_foreign_key "questions_exams", "questions"
   add_foreign_key "subjects", "users"
-  add_foreign_key "tests", "exams", column: "exams_id"
-  add_foreign_key "tests", "users", column: "users_id"
+  add_foreign_key "tests", "exams"
+  add_foreign_key "tests", "users"
 end

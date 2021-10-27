@@ -1,0 +1,14 @@
+<div class="nested-fields">
+  <div class="row">
+    <div class="pf-field col-lg-10 col-sm-10">
+      <%= f.select :question_id, @questions.pluck(:content, :id) %>
+    </div>
+    <div class="pf-field col-lg-10 col-sm-10">
+      <%= f.label :score, t(".score"), class: "required" %>
+      <%= f.number_field :score %>
+    </div>
+    <div class="col-lg-1 col-sm-1">
+      <%= link_to_remove_association t(".remove_question"), f %>
+    </div>
+  </div>
+</div>

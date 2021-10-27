@@ -1,6 +1,8 @@
 <% provide :title, t(".title") %>
 <h1><%= t ".header" %></h1>
 <% if @subjects.any? %>
+  <h2><%= link_to t(".list_question"), questions_path %></h2>
+  <h2><%= link_to t(".list_exam"), exams_path %></h2>
   <h2><%= @subjects.count %></h2>
   <ol class="subjects">
     <%= render @subjects %>

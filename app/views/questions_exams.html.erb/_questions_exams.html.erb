@@ -1,0 +1,51 @@
+<li>
+  <span class="user"><%= link_to exam.user_name, exam.user %></span>
+  <span class="content">
+    <%= t(".code_exam") %>
+    <%= questions_exam.exams_id %>
+    <%= t(".subject_exam") %>
+    <%= link_to subject_exam.subject_name, subjects_path %>
+    <%= t(".count_questions") %>
+    <%= questions_exams.count %>
+  </span>
+  <span class="questions">
+    <% if questions_exam.questions.any? %>
+      <%= ".question" %>
+      <%= ".content" %>
+      <ul>
+        <%= questions_exam.questions do |question| %>
+          <li>
+              <%= ".content" %>
+              <%= questions_exam.question_content %>
+          </li>
+          <li>
+            <span class="answer">
+              <% if current_user.suppervisor? %>
+                <% if question.answers.any? %>
+                  <%= ".answer" %>
+                  <ul>
+                    <% question.answers.each do |answer| %>
+                    <li>
+                      <%= answer.ans %>, <%= answer.content %>, <%= answer.check %>
+                    </li>
+                    <% end %>
+                  </ul>
+                <% end %>
+                <%= button_to t(".delete"), {action: "destroy", id: question.id}, method: :delete, data: {confirm: t(".sure")} %>
+                <strong>
+                  <%= question.content %>
+                </strong>
+                <%= link_to t(".edit_question"), edit_question_path(question) %>
+              <% end %>
+            </span>
+          </li>
+          <li>
+            <%= ".score" %>
+            <%= questions_exam.score %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+    <%= button_to t(".delete"), {action: "destroy", id: questions_exam.id}, method: :delete, data: {confirm: t(".sure")} %>
+  </span>
+</li>

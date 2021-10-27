@@ -1,0 +1,11 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".header" %></h1>
+<h2><%= link_to t(".add_question"), new_question_path %></h2>
+
+<% if @questions.any? %>
+  <h2><%= @questions.count %></h2>
+  <ol class="questions">
+    <%= render @questions %>
+  <ol>
+  <%= paginate @questions, theme: "twitter-bootstrap-3" %>
+<% end %>

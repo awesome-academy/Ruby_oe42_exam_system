@@ -60,9 +60,12 @@ vi:
     index:
       title: "Subjects"
       header: "Subjects"
+      list_question: "Câu hỏi"
+      list_exam: "Đề thi"
+
     subject:
-      delete: "Xoa"
-      sure: "Chac chan xoa?"
+      delete: "Xóa"
+      sure: "Chắc chắn xóa?"
   activerecord:
     errors:
       models:
@@ -70,7 +73,81 @@ vi:
           attributes:
             user:
               required: "Lỗi"
-
+  questions:
+    index:
+      title: "Câu hỏi"
+      header: "Câu hỏi"
+      add_question: "Thêm mới câu hỏi"
+    new:
+      title: "Câu hỏi"
+      button_text: "Tạo một câu hỏi mới"
+      header: "Câu hỏi"
+    edit:
+      title: "Chỉnh sửa câu hỏi"
+      button_text: "Chỉnh sửa"
+      text: "Chỉnh sửa đáp án và nội dung câu hỏi"
+    question:
+      user_create: "Tên user: %{name}"
+      content: "Nội dung:"
+      delete: "Xóa"
+      sure: "Chắc chắn xóa?"
+      edit_question: "Sửa câu hỏi"
+      answer: "Đáp án:"
+    form:
+      answer: "Câu hỏi:"
+      content: "Nội dung câu hỏi"
+      add_answer: "Thêm câu trả lời"
+    answer_fields:
+      answer: "Đáp án: "
+      content: "Nội dung đáp án"
+      check: "Đáp án đúng hay sai"
+      remove_answer: "Loại bỏ câu trả lời"
+  exams:
+    exam:
+      question: "Câu hỏi"
+      subject: "Chủ đề"
+      sure: "Xóa?"
+      delete: "Xóa"
+    form:
+      question: "Câu hỏi "
+      add_questions_exam: "Thêm câu hỏi "
+    questions_exam_fields:
+      score: "Điểm "
+      remove_question: "Xóa bỏ câu hỏi "
+    index:
+      title: "Đề thi"
+      add_exams: "Tạo mới một đề thi"
+      header: "Đề thi"
+    new:
+      title: "Đề thi mới"
+      button_text: "Tạo đề thi mới"
+    show:
+      questions: "Tổng câu hỏi: "
+      code: "Mã đề"
+  questions_exams:
+    questions_exams:
+      code_exam: "Mã đề"
+      subject_exam: "Chủ đề đề thi"
+      count_questions: "Tổng câu hỏi"
+      question: "Câu hỏi "
+      content: "NỘi dung"
+      answer: "Đáp án"
+      delete: "Xóa"
+      edit_question: "Chỉnh sửa câu hỏi"
+      score: "Điểm"
+      sure: "Xóa?"
+    show:
+      header: "Câu hỏi đề thi"
+      questions: "Câu hỏi"
+  success_exam: "Tạo đề thi hành công"
+  fail_exam: "Thất bại "
+  exam_not_found: "Không tìm thấy đề thi"
+  deleted_exam: "Đã xóa"
+  fail_delete_exam: "Không thể xóa đề thi"
+  success_question: "Tạo câu hỏi mới thành công"
+  fail_question: "Tạo câu hỏi mới thất bại"
+  deleted_question: "Đã xóa"
+  question_not_found: "Không tìm thấy câu hỏi "
   fail: "Tạo người dùng không thành công"
   user_not_found: "Người dùng không được tìm thấy"
   subject_not_fount: "Subject khong duoc tim thay"
@@ -84,3 +161,5 @@ vi:
   fail_subject: "Tạo subject không thành công"
   deleted: "Xóa"
   fail_delete: "Không thể xóa"
+  updated_successfully: "Cập nhập thành công"
+  updated_failed: "Cập nhập thất bại"

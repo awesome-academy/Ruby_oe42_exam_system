@@ -1,0 +1,10 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".header" %></h1>
+<h2><%= link_to t(".add_exams"), new_exam_path %></h2>
+<% if @exam.try(:any?) %>
+  <h2><%= @exam.count %></h2>
+  <ol class="exams">
+    <%= render @exam %>
+  <ol>
+  <%= paginate @exam, theme: "twitter-bootstrap-3" %>
+<% end %>

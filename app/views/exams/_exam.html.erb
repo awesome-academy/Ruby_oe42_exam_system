@@ -1,0 +1,16 @@
+<li>
+  <span class="subject">
+    <%= t ".subject" %>:
+    <%= exam.subject.name %>
+  </span>
+  <span class="question">|
+    <%= t ".question" %>:
+    <%= exam.questions_exams.count %>
+  </span>
+  </span>
+  <span class="delete">
+    <% if current_user? exam.user %>
+      | <%= button_to t(".delete"), {action: "destroy", id: exam.id}, method: :delete, data: {confirm: t(".sure")} %>
+    <% end %>
+  </span>
+</li>

@@ -3,13 +3,18 @@
 @import 'color';
 
 // universal
+header{
+  background-color: $pink1;
+}
 
 body {
   padding-top: 60px;
+  background-color: $gray;
 }
 
 section {
   overflow: auto;
+  color: $pink1;
 }
 
 textarea {
@@ -24,6 +29,7 @@ textarea {
 
 h1,h2,h3,h4,h5,h6 {
   line-height: 1;
+  color: $pink2;
 }
 
 h1 {

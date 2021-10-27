@@ -1,0 +1,21 @@
+<%= form_for @question do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div>
+    <%= f.label :content, t(".content"), class: "required" %>
+    <%= f.text_field :content %>
+  </div>
+  <div>
+    <p><strong><%= t ".answer" %></strong></p>
+
+    <div id="answers">
+      <%= f.fields_for :answers do |answer| %>
+        <%= render "answer_fields", f: answer %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association t(".add_answer"), f, :answers %>
+      </div>
+    </div>
+
+  </div>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

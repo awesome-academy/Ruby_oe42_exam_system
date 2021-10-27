@@ -60,9 +60,87 @@ en:
     index:
       title: "Subjects"
       header: "Subjects"
+      list_question: "Questions"
+      list_exam: "Exams"
     subject:
       delete: "Delete"
-      sure: "Sure delete?"
+      sure: "delete?"
+  questions:
+    index:
+      title: "Questions"
+      header: "Questions"
+      add_question: "Add a new question"
+    new:
+      title: "Question"
+      button_text: "Questions"
+      header: "Questions"
+    edit:
+      title: "Edit question"
+      button_text: "Edit"
+      text: "Edit answer and content"
+    questions:
+      user_create: "User name: %{name}"
+      content: "Content:"
+      delete: "Delete"
+      sure: "Sure?"
+      edit_question: "Edit question"
+      answer: "Answer:"
+    form:
+      answer: "Answer:"
+      content: "Content"
+      add_answer: "Add new answer"
+    answer_fields:
+      answer: "Answer: "
+      content: "Content"
+      check: "Answer is right or wrong"
+      remove_answer: "Remove answer"
+  exams:
+    exam:
+      question: "Question"
+      subject: "Subject"
+      sure: "Delete?"
+      delete: "Delete"
+    form:
+      question: "Question"
+      add_questions_exam: "Add a question"
+    questions_exam_fields:
+      score: "Score"
+      remove_question: "Remove question"
+    index:
+      title: "Exam"
+      add_exams: "Add a new exam"
+      header: "Exam"
+    new:
+      title: "New Exam"
+      button_text: "Create a new exam"
+      header: "New Exam"
+    show:
+      questions: "Count questions: "
+      code: "Code exam"
+  questions_exams:
+    questions_exams:
+      code_exam: "Code exam"
+      subject_exam: "Subject exam"
+      count_questions: "Count questions"
+      question: "Question"
+      content: "Content"
+      answer: "Answer"
+      delete: "Delete"
+      edit_question: "Edit question"
+      score: "Score"
+      sure: "Delete?"
+    show:
+      header: "Questions of exam"
+      questions: "Questions"
+  success_exam: "Success"
+  fail_exam: "Fail"
+  exam_not_found: "Exam not found"
+  deleted_exam: "Deleted"
+  fail_delete_exam: "Cant delete this exam"
+  success_question: "Successful"
+  fail_question: "create failed"
+  deleted_question: "deleted"
+  question_not_found: "Quesion not found"
   fail: "Create user fail"
   deleted: "Deleted"
   fail_delete: "Can not delete"
@@ -76,3 +154,5 @@ en:
   error: "errors"
   success_subject: "Create a new subject successfully"
   fail_subject: "Create subject fail"
+  updated_successfully: "Update successfully"
+  updated_failed: "Update failed"
