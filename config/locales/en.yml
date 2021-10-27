@@ -60,9 +60,43 @@ en:
     index:
       title: "Subjects"
       header: "Subjects"
+      list_question: "Questions"
     subject:
       delete: "Delete"
-      sure: "Sure delete?"
+      sure: "delete?"
+  questions:
+    index:
+      title: "Questions"
+      header: "Questions"
+      add_question: "Add a new question"
+    new:
+      title: "Question"
+      button_text: "Questions"
+      header: "Questions"
+    edit:
+      title: "Edit question"
+      button_text: "Edit"
+      text: "Edit answer and content"
+    question:
+      user_create: "User name: %{name}"
+      content: "Content:"
+      delete: "Delete"
+      sure: "Sure?"
+      edit_question: "Edit question"
+      answer: "Answer:"
+    form:
+      answer: "Answer:"
+      content: "Content"
+      add_answer: "Add new answer"
+    answer_fields:
+      answer: "Answer: "
+      content: "Content"
+      check: "Answer is right or wrong"
+      remove_answer: "Remove answer"
+  success_question: "Successful"
+  fail_question: "create failed"
+  deleted_question: "deleted"
+  question_not_found: "Quesion not found"
   fail: "Create user fail"
   deleted: "Deleted"
   fail_delete: "Can not delete"
@@ -76,3 +110,5 @@ en:
   error: "errors"
   success_subject: "Create a new subject successfully"
   fail_subject: "Create subject fail"
+  updated_successfully: "Update successfully"
+  updated_failed: "Update failed"

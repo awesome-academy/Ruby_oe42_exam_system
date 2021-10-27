@@ -1,0 +1,12 @@
+<div class="nested-fields">
+  <%= f.label :ans, t(".answer") %>
+  <%= f.text_field :ans %>
+
+  <%= f.label :content, t(".content")%>
+  <%= f.text_field :content %>
+
+  <%= f.label :check, t(".check") %>
+  <%= f.select :check, Answer.checks.keys %>
+
+  <%= link_to_remove_association t(".remove_answer"), f %>
+</div>
