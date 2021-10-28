@@ -17,5 +17,8 @@ Rails.application.routes.draw do
       resources :questions_exams, only: :create
     end
     resources :questions_exams
+    resources :tests do
+      resources :test_questions_exams, only: :create
+    end
   end
 end

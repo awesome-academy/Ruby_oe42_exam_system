@@ -6,7 +6,12 @@
   <%= f.text_field :content %>
 
   <%= f.label :check, t(".check") %>
-  <%= f.select :check, Answer.checks.keys %>
+  <% Answer.checks.keys.each do |c| %>
+    <div class="check">
+      <%= f.label :check, c %>
+      <%= f.radio_button :check, c %>
+    <div>
+  <% end %>
 
   <%= link_to_remove_association t(".remove_answer"), f %>
 </div>

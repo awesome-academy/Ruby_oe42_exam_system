@@ -177,7 +177,7 @@ Style/LambdaCall:
     - braces
 
 Metrics/LineLength:
-  Max: 80
+  Max: 85
   AllowURI: true
   Exclude:
     - config/routes.rb
