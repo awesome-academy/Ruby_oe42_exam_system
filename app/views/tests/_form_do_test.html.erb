@@ -1,0 +1,32 @@
+<%= form_for @test do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <em>
+    <strong><%= t ".user" %></strong>
+    <%= link_to @test.user.name, @test.user %><br>
+    <strong><%= t ".time" %></strong><%= @test.time_test %><br>
+  </em>
+  <br><br>
+  <div class="exam">
+    <% i = 0 %>
+    <% list_test_question_exam_for_a_test(@test).each do |test_question_exam| %>
+      <strong>
+        <%= i+=1 %>.
+        <%= test_question_exam.questions_exam.question.content %><br>
+      </strong>
+            <!-- chon dap an -->
+    <!--Error -->
+      <%= f.fields_for @test_questions_exam do |t| %>
+        <% t.label :answer_id_choose %><br />
+        <% test_question_exam.questions_exam.question.answers.each do |answer| %>
+          <li>
+            <%= radio_button :t, :answer, answer.id %>
+            <%= t.label :answer_id_choose, answer.content, :value => answer.id %>
+          </li>
+        <% end %>
+      <%end%>
+    <% end %>
+  </div>
+  <button type="button" class="btn active" type="submit">
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  </button>
+<% end %>

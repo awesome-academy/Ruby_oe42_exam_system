@@ -163,12 +163,38 @@ input {
   margin-bottom: 10px;
 }
 
+.radio+.radio, .checkbox+.checkbox {
+  margin-top: -5px;
+}
+
 .checkbox {
   margin-top: 10px;
   span {
     font-weight: normal;
     margin-left: 20px;
   }
+}
+
+.radio, .checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+li {
+  text-align: -webkit-match-parent;
+}
+
+.exam .radio {
+  padding-left: 20px;
+  font-size:20px;
 }
 
 label.required:after {

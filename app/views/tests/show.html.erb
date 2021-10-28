@@ -1,0 +1,18 @@
+<%= provide :title, @test.exam_id %>
+<strong><% t ".text" %></strong>
+<div class="row">
+  <aside class = "col-md-4">
+    <section class = "test_info">
+      <h1>
+       <!-- chu de -->
+        <%= link_to t(".subject"), "#" %>
+        <!-- trainee lam bai -->
+        <%= link_to t(".trainee"), "#" %>
+        <!-- thoi gian lam bai -->
+        <%= t ".time" %>
+        <!-- review lai bai lam -->
+        <%= link_to t(".review"), "#" %>
+      </h1>
+    </section>
+  </aside>
+</div>

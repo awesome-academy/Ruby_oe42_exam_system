@@ -32,6 +32,7 @@ en:
       question: "Questions"
       settings: "Settings"
       list_exam: "List exam"
+      tests: "Tests"
   users:
     edit:
       header: "Editing User"
@@ -159,6 +160,36 @@ en:
     show:
       header: "Questions of exam"
       questions: "Questions"
+  tests:
+    form_do_test:
+      user: "Work by: "
+      time: "Time start: "
+    test:
+      view: "View"
+      do_test: "Test"
+      load: "Loading..."
+    edit:
+      title: "Test"
+      button_text: "Submit"
+      text: "Test"
+    index:
+      title: "Test"
+      header: "Test"
+      table: "Test list"
+      time_create: "Created Date"
+      sub: "Subject"
+      num: "Question number"
+      time: "Spent Time"
+      score: "Score"
+      view: "Other"
+      add_test: "Create new test"
+    new:
+      title: "New test"
+      button_text: "Create new test"
+      header: "New test"
+    show:
+      text: "Review test"
+
   success_exam: "Success"
   fail_exam: "Fail"
   exam_not_found: "Exam not found"
@@ -183,3 +214,7 @@ en:
   fail_subject: "Create subject fail"
   updated_successfully: "Update successfully"
   updated_failed: "Update failed"
+  do_test_success: "Do test successfully"
+  do_test_fail: "Do test fail"
+  success_test: "Create a new test successfully "
+  fail_test: "Create a new test fail"

@@ -1,0 +1,40 @@
+<tr>
+  <% if current_user? test.user %>
+   <td>
+      <%= test.created_at %>
+    </td>
+    <td>
+      <%= test.exam.subject_name %>
+    </td>
+    <td>
+      <%= test.exam.questions_exams.count %>
+    </td>
+    <% if !test.total_score.nil? %>
+      <td>
+        <%= time_do_test(test) %>
+      </td>
+      <td>
+        <%= test.total_score %>
+      </td>
+      <td>
+        <%= link_to t(".view"), "#" %>
+      </td>
+    <% else %>
+      <td>
+        -
+      </td>
+      <td>
+        -
+      </td>
+      <% if !test.time_test.nil? %>
+        <td>
+          <%= t ".load" %>
+        </td>
+      <% else %>
+        <td>
+          <%= link_to t(".do_test"), edit_test_path(test.id) %>
+        </td>
+      <% end %>
+    <% end %>
+  <% end %>
+</tr>
