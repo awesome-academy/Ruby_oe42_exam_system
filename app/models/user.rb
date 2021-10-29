@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :questions, dependent: :destroy
 
   has_many :subjects, dependent: :destroy
+  has_many :exams, dependent: :destroy
 
   validates :name, presence: true, length: {maximum: Settings.max_name}
   validates :email, presence: true,

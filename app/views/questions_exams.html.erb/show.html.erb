@@ -1,0 +1,14 @@
+<%= provide :title, @questions_exam.id %>
+
+<section class="content-header">
+  <h1><%= t".header", name: @exam.subject_name %></h1>
+</section>
+
+<section class="content">
+  <li class="list-question">
+    <b><% t ".questions" %></b>
+    <div class="float-right"><%= @exam.questions_exams.count %>
+      <%= render @questions_exam.questions %>
+    </div>
+  </li>
+</section>

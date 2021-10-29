@@ -13,5 +13,9 @@ Rails.application.routes.draw do
     resources :users
     resources :subjects
     resources :questions
+    resources :exams do
+      resources :questions_exams, only: :create
+    end
+    resources :questions_exams
   end
 end

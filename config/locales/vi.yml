@@ -61,6 +61,8 @@ vi:
       title: "Subjects"
       header: "Subjects"
       list_question: "Câu hỏi"
+      list_exam: "Đề thi"
+
     subject:
       delete: "Xóa"
       sure: "Chắc chắn xóa?"
@@ -100,6 +102,48 @@ vi:
       content: "Nội dung đáp án"
       check: "Đáp án đúng hay sai"
       remove_answer: "Loại bỏ câu trả lời"
+  exams:
+    exam:
+      question: "Câu hỏi"
+      subject: "Chủ đề"
+      sure: "Xóa?"
+      delete: "Xóa"
+    form:
+      question: "Câu hỏi "
+      add_questions_exam: "Thêm câu hỏi "
+    questions_exam_fields:
+      score: "Điểm "
+      remove_question: "Xóa bỏ câu hỏi "
+    index:
+      title: "Đề thi"
+      add_exams: "Tạo mới một đề thi"
+      header: "Đề thi"
+    new:
+      title: "Đề thi mới"
+      button_text: "Tạo đề thi mới"
+    show:
+      questions: "Tổng câu hỏi: "
+      code: "Mã đề"
+  questions_exams:
+    questions_exams:
+      code_exam: "Mã đề"
+      subject_exam: "Chủ đề đề thi"
+      count_questions: "Tổng câu hỏi"
+      question: "Câu hỏi "
+      content: "NỘi dung"
+      answer: "Đáp án"
+      delete: "Xóa"
+      edit_question: "Chỉnh sửa câu hỏi"
+      score: "Điểm"
+      sure: "Xóa?"
+    show:
+      header: "Câu hỏi đề thi"
+      questions: "Câu hỏi"
+  success_exam: "Tạo đề thi hành công"
+  fail_exam: "Thất bại "
+  exam_not_found: "Không tìm thấy đề thi"
+  deleted_exam: "Đã xóa"
+  fail_delete_exam: "Không thể xóa đề thi"
   success_question: "Tạo câu hỏi mới thành công"
   fail_question: "Tạo câu hỏi mới thất bại"
   deleted_question: "Đã xóa"

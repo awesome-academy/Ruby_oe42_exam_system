@@ -1,0 +1,10 @@
+<% provide :title, @exam.id %>
+
+<section class="content-header">
+  <h1><%= t ".code" %><%= @exam.id %></h1>
+</section>
+<li class="list-group-item">
+  <b><% t ".questions" %></b>
+  <div class="float-right"><%= @exam.questions_exams.count %>
+  </div>
+</li>
