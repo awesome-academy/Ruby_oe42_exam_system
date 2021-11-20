@@ -11,7 +11,7 @@ class QuestionsExamsController < ApplicationController
     if @exam && @exam.questions << Question.find(params[:question_id])
       flash[:success] = t "success_question"
 
-      redirect_to root_path
+      redirect_to questions_path
     else
       flash[:danger] = t "fail_question"
       render :new
@@ -37,6 +37,6 @@ class QuestionsExamsController < ApplicationController
     return if @questions_exam
 
     flash[:danger] = t "question_not_found"
-    redirect_to root_url
+    redirect_to questions_path
   end
 end

@@ -1,11 +1,32 @@
 <% provide :title, t(".title") %>
-<h1><%= t ".header" %></h1>
-<% if @subjects.any? %>
-  <h2><%= link_to t(".list_question"), questions_path %></h2>
-  <h2><%= link_to t(".list_exam"), exams_path %></h2>
-  <h2><%= @subjects.count %></h2>
-  <ol class="subjects">
-    <%= render @subjects %>
-  <ol>
-  <%= paginate @subjects, theme: "twitter-bootstrap-3" %>
-<% end %>
+<section class="content-header">
+  <h1><%= t ".header" %></h1>
+</section>
+
+<section class="content">
+  <nav class="navbar navbar-expand-lg ">
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit"><%= t".search" %></button>
+    </form>
+  </nav>
+
+  <table class = "table table-hover">
+    <caption align="top">
+    	<strong><%= t(".table") %><br></strong>
+      <span class="navbar-toggler-icon"></span>
+    </caption>
+      <tr>
+        <th class="subject_id"><%= t".id" %></th>
+        <th class="des"><%= t".des" %></th>
+        <th class="user_create"><%= t".user" %></th>
+        <th class="del"><%= t".del" %></th>
+      </tr>
+      <tbody>
+        <%= render @subjects %>
+      </tbody>
+    </thead>
+  </table>
+  <%= link_to t(".new"), new_subject_path, class: "btn btn-outline-success" %>
+  <%= paginate @subjects, theme: "twitter-bootstrap-3", pagination_class: "pagination-sm" %>
+</section>

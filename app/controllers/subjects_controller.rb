@@ -34,7 +34,7 @@ class SubjectsController < ApplicationController
     else
       flash[:danger] = t "fail_delete"
     end
-    redirect_to request.referer || root_url
+    redirect_to request.referer || subjects_path
   end
 
   private
@@ -47,6 +47,6 @@ class SubjectsController < ApplicationController
     return if @subject
 
     flash[:danger] = t "subject_not_found"
-    redirect_to root_url
+    redirect_to subjects_path
   end
 end

@@ -5,11 +5,12 @@ en:
       title: "Home"
       content: "This is the home page for the exam system"
       sign_in: "Sign in"
+      welcome: "Welcome to Exam System"
   shared:
     error_messages:
       form: "The form contains"
     user_info:
-      view_profile: "view my profile"
+      view_profile: "View my profile"
   sessions:
     new:
       header: "Sign in"
@@ -27,6 +28,10 @@ en:
       exam_system: "Exam system"
       account: "Account"
       subject: "Subjects"
+      dif: "Other"
+      question: "Questions"
+      settings: "Settings"
+      list_exam: "List exam"
   users:
     edit:
       header: "Editing User"
@@ -46,6 +51,13 @@ en:
       conf: "Password confirm"
     error:
       error: "error prohibited this user from being saved:"
+    show:
+      id: "Id: "
+      name: "Name: "
+      role: "Role: "
+      email: "Email: "
+      table: "Profile"
+      add_user: "add user"
   subjects:
     new:
       title: "Add a new subject"
@@ -62,6 +74,13 @@ en:
       header: "Subjects"
       list_question: "Questions"
       list_exam: "Exams"
+      table: "List subjects"
+      id: "ID: "
+      user: "User create: "
+      search: "Search"
+      des: "Describe"
+      del: "Delete"
+      new: "+New"
     subject:
       delete: "Delete"
       sure: "delete?"
@@ -69,7 +88,7 @@ en:
     index:
       title: "Questions"
       header: "Questions"
-      add_question: "Add a new question"
+      add_question: "+new question"
     new:
       title: "Question"
       button_text: "Questions"
@@ -85,6 +104,8 @@ en:
       sure: "Sure?"
       edit_question: "Edit question"
       answer: "Answer:"
+      user: "User create:"
+      ans: "Answer: "
     form:
       answer: "Answer:"
       content: "Content"
@@ -110,6 +131,12 @@ en:
       title: "Exam"
       add_exams: "Add a new exam"
       header: "Exam"
+      id: "ID"
+      sub: "Subject"
+      num: "Sum questions"
+      del: "Delete"
+      user: "User create"
+      table: "List exam"
     new:
       title: "New Exam"
       button_text: "Create a new exam"

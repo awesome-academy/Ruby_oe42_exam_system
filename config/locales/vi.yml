@@ -1,9 +1,9 @@
 vi:
   static_pages:
     home:
-      header: "Exam System"
+      header: "Hệ thống thi"
       title: "Trang chủ"
-      content: "Đây là trang chủ của Exam System"
+      welcome: "Chào mừng đến với trang chủ của Hệ thống quản lý bài thi.."
       sign_in: "Đăng nhập"
   shared:
     error_messages:
@@ -14,10 +14,10 @@ vi:
     new:
       header: "Đăng nhập"
       title: "Đăng nhập"
-      add_new_user: "Thêm một user mới"
+      add_new_user: "Thêm một tài khoản mới"
     form:
       content: "Đăng nhập"
-      remember: "Hãy nhớ tôi trên máy tính này"
+      remember: "Ghi nhớ tài khoản"
   layouts:
     header:
       title_home: "Trang chủ"
@@ -26,14 +26,18 @@ vi:
       login: "Đăng nhập"
       exam_system: "Hệ thống quản lý bài thi"
       account: "Tài khoản"
-      subject: "Subjects "
+      subject: "Chủ đề"
+      dif: "Khác"
+      question: "Câu hỏi"
+      settings: "Cài đặt"
+      list_exam: "Đề thi"
   users:
     new:
-      header: "Thêm một user mới"
-      title: "Thêm một user mới"
+      header: "Thêm một tài khoản mới"
+      title: "Thêm một tài khoản mới"
       buttontext: "Tạo tài khoản mới"
     edit:
-      header: "Chỉnh sửa User"
+      header: "Chỉnh sửa thông tin"
       conf: "Nhập lại mật khẩu"
       name: "Tên"
       email: "Email"
@@ -41,28 +45,41 @@ vi:
     form:
       name: "Tên"
       email: "Email"
-      role: "Role"
+      role: "Vai trò"
       pass: "Mật khẩu"
       conf: "Nhập lại mật khẩu"
     error:
       error: "Lỗi bị cấm lưu người dùng này:"
+    show:
+      id: "Mã tài khoản"
+      name: "Tên người dùng"
+      role: "Vai trò"
+      email: "Email"
+      table: "Thông tin tài khoản"
+      add_user: "Thêm tài khoản"
   subjects:
     new:
-      title: "Thêm một subject mới "
-      header: "Mới subject"
-      button_text: "Tạo một subject mới"
+      title: "Thêm một chủ đề mới "
+      header: "Chủ đề mới"
+      button_text: "Tạo một chủ đề mới"
     form:
-      name: "Tên subject: "
+      name: "Tên chủ đề: "
       description: "Mô tả: "
-      user_create_id: "User tạo %{name}"
+      user_create_id: "Tài khoản tạo %{name}"
     show:
-      user_name: "Tên người tạo"
+      user_name: "Người tạo"
     index:
-      title: "Subjects"
-      header: "Subjects"
+      title: "Chủ đề"
+      header: "Chủ đề"
       list_question: "Câu hỏi"
       list_exam: "Đề thi"
-
+      table: "Bảng các chủ đề"
+      id: "Mã chủ đề"
+      user: "Người tạo"
+      search: "Tìm"
+      des: "Mô tả"
+      del: "Xóa"
+      new: "+Mới"
     subject:
       delete: "Xóa"
       sure: "Chắc chắn xóa?"
@@ -76,8 +93,8 @@ vi:
   questions:
     index:
       title: "Câu hỏi"
-      header: "Câu hỏi"
-      add_question: "Thêm mới câu hỏi"
+      header: "Danh sách câu hỏi"
+      add_question: "+ câu hỏi"
     new:
       title: "Câu hỏi"
       button_text: "Tạo một câu hỏi mới"
@@ -87,12 +104,15 @@ vi:
       button_text: "Chỉnh sửa"
       text: "Chỉnh sửa đáp án và nội dung câu hỏi"
     question:
-      user_create: "Tên user: %{name}"
+      user_create: "Người dùng tạo: %{name}"
       content: "Nội dung:"
       delete: "Xóa"
       sure: "Chắc chắn xóa?"
       edit_question: "Sửa câu hỏi"
       answer: "Đáp án:"
+      user: "Người tạo:"
+      ans: "Câu trả lời"
+
     form:
       answer: "Câu hỏi:"
       content: "Nội dung câu hỏi"
@@ -118,9 +138,16 @@ vi:
       title: "Đề thi"
       add_exams: "Tạo mới một đề thi"
       header: "Đề thi"
+      id: "Mã đề"
+      sub: "Chủ đề"
+      num: "Số câu hỏi"
+      del: "Xóa"
+      user: "Người tạo"
+      table: "Danh sách đề thi"
     new:
       title: "Đề thi mới"
       button_text: "Tạo đề thi mới"
+      header: "Tạo đề thi mới"
     show:
       questions: "Tổng câu hỏi: "
       code: "Mã đề"
@@ -157,8 +184,8 @@ vi:
   base_title: "Exam System"
   login_success: "Đăng nhập thành công"
   error: "Lỗi"
-  success_subject: "Tạo mới subject thành công "
-  fail_subject: "Tạo subject không thành công"
+  success_subject: "Tạo mới chủ đề thành công "
+  fail_subject: "Tạo chủ đề không thành công"
   deleted: "Xóa"
   fail_delete: "Không thể xóa"
   updated_successfully: "Cập nhập thành công"

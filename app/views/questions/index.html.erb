@@ -1,11 +1,13 @@
-<% provide :title, t(".title") %>
-<h1><%= t ".header" %></h1>
-<h2><%= link_to t(".add_question"), new_question_path %></h2>
-
-<% if @questions.any? %>
-  <h2><%= @questions.count %></h2>
-  <ol class="questions">
-    <%= render @questions %>
-  <ol>
-  <%= paginate @questions, theme: "twitter-bootstrap-3" %>
-<% end %>
+<div class="container">
+  <% provide :title, t(".title") %>
+  <h2><%= t ".header" %></h2>
+  <%= link_to t(".add_question"), new_question_path, class: "btn btn-lg btn-light rounded" %>
+  <ul class="list-group">
+    <% if @questions.any? %>
+      <%= render @questions %>
+      <span>
+        <%= paginate @questions, class: "pagination" %>
+      </span>
+    <% end %>
+  </ul>
+</div>
