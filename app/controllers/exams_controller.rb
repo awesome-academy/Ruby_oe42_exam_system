@@ -4,7 +4,8 @@ class ExamsController < ApplicationController
   before_action :load_questions, only: %i(new create show)
 
   def index
-    @exam = Exam.all.page(params[:page]).per Settings.show_5
+    @exam = Exam.all.page(params[:page]).includes(:subject, :user)
+                .per Settings.show_5
   end
 
   def show
