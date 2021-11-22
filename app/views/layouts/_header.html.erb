@@ -1,29 +1,45 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to t(".exam_system"), root_path %>
-    <nav>
-      <ul class= "nav navbar-nav navbar-right">
-        <li><%= link_to t(".title_home"), root_path %></li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+  <div class="container-fluid">
+    <%= link_to t(".exam_system"), root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to t(".title_home"), root_path, class: "nav-link active" %>
+        </li>
         <% if logged_in? %>
-          <li><%= link_to t(".user"), '#' %></li>
-          <li> <%= link_to t(".logout"), logout_path, method: :delete %> </li>
-          <li> <%= link_to t(".subject"), subjects_path %> </li>
-          <li class = "dropdown" >
-            <%= link_to "#", class: "dropdown-toggle", "data-toggle": "dropdown" do %>
-              <%= t ".account" %>
-              <b class="caret"></b>
-            <% end %>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", '#' %></li>
-              <li class="divider"></li>
-              <li> <%= link_to t(".logout"), logout_path, method: :delete %> </li>
+          <li class="nav-item">
+            <%= link_to t(".user"), current_user, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t(".list_exam"), exams_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= t".dif" %>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><%= link_to t(".subject"), subjects_path, class: "dropdown-item" %></li>
+              <li><%= link_to t(".question"), questions_path, class: "dropdown-item" %></li>
+              <li><%= link_to t(".settings"), '#' ,class: "dropdown-item" %></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li> <%= link_to t(".logout"), logout_path, class: "dropdown-item" %></li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to t(".login"), login_path %></li>
+          <li class="nav-item"><%= link_to t(".login"), login_path, class: "nav-link" %></li>
         <% end %>
       </ul>
-    </nav>
+      <button class="btn btn-outline-danger">
+        <%= link_to "VI", locale:"vi" ,class: "dropdown-item" %>
+      </button>
+      <button class="btn btn-outline-danger">
+        <%= link_to "EN", locale:"en" ,class: "dropdown-item" %>
+      </button>
+    </div>
   </div>
-<header>
+</nav>

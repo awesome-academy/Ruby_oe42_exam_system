@@ -1,16 +1,19 @@
-<li>
-  <span class="subject">
-    <%= t ".subject" %>:
-    <%= exam.subject.name %>
-  </span>
-  <span class="question">|
-    <%= t ".question" %>:
+<tr>
+  <td>
+    <%= exam.id %>
+  </td>
+  <td>
+    <%= exam.subject_name %>
+  </td>
+  <td>
     <%= exam.questions_exams.count %>
-  </span>
-  </span>
-  <span class="delete">
+  </td>
+  <td>
+    <%= link_to exam.user_name , exam.user %>
+  </td>
+  <td>
     <% if current_user? exam.user %>
-      | <%= button_to t(".delete"), {action: "destroy", id: exam.id}, method: :delete, data: {confirm: t(".sure")} %>
+      <%= button_to t(".delete"), {action: "destroy", id: exam.id}, method: :delete, data: {confirm: t(".sure")} %>
     <% end %>
-  </span>
-</li>
+  </td>
+</tr>

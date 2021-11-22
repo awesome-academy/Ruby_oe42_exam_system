@@ -8,8 +8,8 @@ class ExamsController < ApplicationController
   end
 
   def show
-    @questions_exams = @exam.questions_exams.includes([subject])
-                            .includes([user]).page(params[:page])
+    @questions_exams = @exam.questions_exams.includes(:subject, :user)
+                            .page(params[:page])
                             .per Settings.show_5
   end
 
@@ -39,7 +39,7 @@ class ExamsController < ApplicationController
     else
       flash[:danger] = t "fail_delete_exam"
     end
-    redirect_to request.referer || root_url
+    redirect_to request.referer || exams_path
   end
 
   private
@@ -52,7 +52,7 @@ class ExamsController < ApplicationController
     return if @exam
 
     flash[:danger] = t "exam_not_found"
-    redirect_to root_url
+    redirect_to exams_path
   end
 
   def load_questions

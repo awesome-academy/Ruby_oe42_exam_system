@@ -5,7 +5,6 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   has_many :questions, dependent: :destroy
-
   has_many :subjects, dependent: :destroy
   has_many :exams, dependent: :destroy
 

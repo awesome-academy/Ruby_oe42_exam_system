@@ -1,13 +1,16 @@
-<li>
-  <span class="user"><%= link_to subject.user_name, subject.user %></span>
-  <span class="description">
+<tr>
+  <td>
+    <%= subject.id %>
+  </td>
+  <td>
     <%= subject.name %>
-    <%= subject.description %>
-
-  </span>
-  <span class="delete">
+  </td>
+  <td>
+    <%= link_to subject.user_name, subject.user %>
+  </td>
+  <td>
     <% if current_user? subject.user %>
-      | <%= button_to t(".delete"), {action: "destroy", id: subject.id}, method: :delete, data: {confirm: t(".sure")} %>
+      <%= button_to t(".delete"), {action: "destroy", id: subject.id}, method: :delete, data: {confirm: t(".sure")} %>
     <% end %>
-  </span>
-</li>
+  </td>
+</tr>

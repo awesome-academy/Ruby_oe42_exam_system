@@ -24,7 +24,7 @@ class QuestionsController < ApplicationController
     if @question.save
       flash[:success] = t "success_question"
 
-      redirect_to root_path
+      redirect_to questions_path
     else
       flash[:danger] = t "fail_question"
       render :new
@@ -47,7 +47,7 @@ class QuestionsController < ApplicationController
     else
       flash[:danger] = t "fail_delete"
     end
-    redirect_to request.referer || root_url
+    redirect_to request.referer || questions_path
   end
 
   private
@@ -60,6 +60,6 @@ class QuestionsController < ApplicationController
     return if @question
 
     flash[:danger] = t "question_not_found"
-    redirect_to root_url
+    redirect_to questions_path
   end
 end
