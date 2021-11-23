@@ -3,9 +3,7 @@ class QuestionsController < ApplicationController
   before_action :logged_in_user
 
   def index
-    @questions = Question.includes(:user).includes([:answers]).all.page(
-      params[:page]
-    ).per Settings.show_5
+    @questions = Question.all.page(params[:page]).per Settings.show_5
   end
 
   def edit; end

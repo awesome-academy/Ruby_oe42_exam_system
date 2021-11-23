@@ -1,7 +1,5 @@
 <% provide :title, t(".title") %>
 <section class="content-header">
-  <br>
-  <br>
   <h1><%= t ".header" %></h1>
 </section>
 
@@ -12,11 +10,11 @@
     </caption>
     <thead>
       <tr>
-        <th class="exam_id"><%= t".id" %></th>
-        <th class="subject_name"><%= t".sub" %></th>
-        <th class="num"> <%= t".num"%></th>
-        <th class="user_create"><%= t".user" %></th>
-        <th class="del"><%= t".del" %></th>
+        <th class="exam_id"><%= t ".id" %></th>
+        <th class="subject_name"><%= t ".sub" %></th>
+        <th class="num"> <%= t ".num" %></th>
+        <th class="user_create"><%= t ".user" %></th>
+        <th class="del"><%= t ".del" %></th>
       </tr>
       <tbody>
         <%= render @exam %>
