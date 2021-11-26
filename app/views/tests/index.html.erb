@@ -1,0 +1,29 @@
+<% provide :title, t(".title") %>
+<section class="content-header">
+  <h1><%= t ".header" %></h1>
+</section>
+
+<section class="content">
+  <table class = "table table-hove">
+    <caption align="top">
+    <strong><%= t".table" %><br></strong>
+    </caption>
+    <thead>
+      <tr>
+        <th class="time_create"><%= t ".time_create" %></th> <!-- thoi gian tao-->
+        <th class="subject_name"><%= t ".sub" %></th>
+        <th class="num"> <%= t ".num" %></th> <!-- so cau hoi -->
+        <th class="time_test"><%= t ".time" %></th> <!-- thoi gian lam bai -->
+        <th class="score"><%= t ".score" %></th>
+        <th class="view"><%= t ".view" %></th>
+      </tr>
+      <tbody>
+        <%= render @test %>
+      </tbody>
+    </thead>
+  </table>
+  <%= link_to t(".add_test"), new_test_path, class: "btn btn-outline-success" %>
+  <span>
+    <%= paginate @test, class: "pagination" %>
+  </span>
+</section>

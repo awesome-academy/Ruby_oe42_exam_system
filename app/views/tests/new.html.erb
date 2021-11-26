@@ -1,0 +1,17 @@
+<% provide :title, t(".title") %>
+<% provide :button_text, t(".button_text") %>
+<h1><%= t ".header" %></h1>
+<div class = "row">
+  <div class = "col-md-6 col-md-offset-3">
+    <%= form_for @test do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <div class = "form-group">
+        <%= f.label :exam_id , class: "required" %>
+        <%= f.select :exam_id, Exam.ids %>
+      </div>
+      <button type="button" class="btn active" type="submit">
+        <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+      </button>
+    <% end %>
+  </div>
+</div>

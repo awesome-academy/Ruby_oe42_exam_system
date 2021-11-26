@@ -31,6 +31,7 @@ vi:
       question: "Câu hỏi"
       settings: "Cài đặt"
       list_exam: "Đề thi"
+      tests: "Bài thi"
   users:
     new:
       header: "Thêm một tài khoản mới"
@@ -166,6 +167,34 @@ vi:
     show:
       header: "Câu hỏi đề thi"
       questions: "Câu hỏi"
+
+  tests:
+    form_do_test:
+      user: "Bài làm bởi:"
+      time: "Thời gian bắt đầu: "
+    test:
+      view: "Xem"
+      do_test: "Làm bài"
+      load: "Đang cập nhập..."
+    edit:
+      title: "Bài thi"
+      button_text: "Nộp bài"
+      text: "Bài thi"
+    index:
+      title: "Bài thi"
+      header: "Bài thi"
+      table: "Danh sách bài thi"
+      time_create: "Thời gian tạo"
+      sub: "Chủ đề"
+      num: "Số câu hỏi"
+      time: "Thời gian làm bài"
+      score: "Điểm"
+      view: "Khác"
+      add_test: "Tạo bài thi mới"
+    new:
+      title: "Bài kiểm tra mới"
+      button_text: "Tạo mới bài kiểm tra"
+      header: "Bài kiểm tra mới"
   success_exam: "Tạo đề thi hành công"
   fail_exam: "Thất bại "
   exam_not_found: "Không tìm thấy đề thi"
@@ -190,3 +219,7 @@ vi:
   fail_delete: "Không thể xóa"
   updated_successfully: "Cập nhập thành công"
   updated_failed: "Cập nhập thất bại"
+  do_test_success: "Nộp bài thành công"
+  do_test_fail: "Nộp bài thất bại"
+  success_test: "Tạo bài kiểm tra thành công"
+  fail_test: "Tạo bài  kiểm tra thất bại"
