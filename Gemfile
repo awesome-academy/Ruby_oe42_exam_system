@@ -19,14 +19,6 @@ gem "sass-rails", "~> 5"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
 
-group :development, :test do
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
-  gem "rspec-rails", "~> 4.0.1"
-  gem "rubocop", "~> 0.74.0", require: false
-  gem "rubocop-checkstyle_formatter", require: false
-  gem "rubocop-rails", "~> 2.3.2", require: false
-end
-
 group :development do
   gem "bullet"
   gem "listen", ">= 3.0.5", "< 3.2"
@@ -42,4 +34,14 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :development, :test do
+  gem "byebug", platforms: %i(mri mingw x64_mingw)
+  gem "rspec-rails", "~> 4.0.1"
+  gem "rubocop", "~> 0.74.0", require: false
+  gem "rubocop-checkstyle_formatter", require: false
+  gem "rubocop-rails", "~> 2.3.2", require: false
+  gem "simplecov"
+  gem "simplecov-rcov"
+end
+
+gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
