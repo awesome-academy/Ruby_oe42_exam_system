@@ -1,6 +1,6 @@
 class ExamsController < ApplicationController
   before_action :find_by_exam, only: %i(show update destroy)
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :load_questions, only: %i(new create show)
 
   def index

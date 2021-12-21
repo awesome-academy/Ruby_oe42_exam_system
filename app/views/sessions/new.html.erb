@@ -1,8 +1,11 @@
 <% provide :title, t(".title") %>
-<h1><%= t ".header" %></h1>
+<section class="content-header">
+  <h1><%= t ".header" %></h1>
+</section>
 
-<div class="row">
-  <div class="col-md-6  col-md-offset-3">
+<section class="content container" id="login">
+  <div class="card-body">
     <%= render "form" %>
+    <%= render "devise/shared/links" %>
   </div>
-</div>
+</section>

@@ -12,6 +12,7 @@ RSpec.configure do |config|
   require "pry"
   require "simplecov"
   require "simplecov-rcov"
+  require "factory_bot_rails"
   require "shoulda/matchers"
   class SimpleCov::Formatter::MergedFormatter
     def format(result)

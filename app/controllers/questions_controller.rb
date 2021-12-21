@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :find_by_question, only: %i(edit update destroy)
-  before_action :logged_in_user
+  before_action :authenticate_user!
 
   def index
     @questions = Question.all.page(params[:page]).per Settings.show_5
