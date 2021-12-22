@@ -9,7 +9,7 @@
         <li class="nav-item">
           <%= link_to t(".title_home"), root_path, class: "nav-link active" %>
         </li>
-        <% if logged_in? %>
+        <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to t(".user"), current_user, class: "nav-link" %>
           </li>
@@ -27,11 +27,11 @@
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li> <%= link_to t(".logout"), logout_path, method: :delete, class: "dropdown-item" %></li>
+              <li> <%= link_to t(".logout"), destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
             </ul>
           </li>
         <% else %>
-          <li class="nav-item"><%= link_to t(".login"), login_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to t(".login"), new_user_session_path, class: "nav-link" %></li>
         <% end %>
       </ul>
       <button class="btn btn-outline-danger">

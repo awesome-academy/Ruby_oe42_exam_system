@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
-  include SessionsHelper
   include ExamsHelper
 
   private
@@ -12,8 +11,15 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
+  def logged_in_supervisor
+    return if current_user.admin? || current_user.supervisor?
+
+    flash[:warning] = t "insufficient_privileges"
+    redirect_to root_url
+  end
+
   def logged_in_user
-    return if logged_in?
+    return if user_signed_in?
 
     store_location
     flash[:danger] = t "please_login"

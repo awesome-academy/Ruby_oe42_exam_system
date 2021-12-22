@@ -1,6 +1,6 @@
 class QuestionsExamsController < ApplicationController
   before_action :find_by_questions_exam, only: %i(show destroy)
-  before_action :logged_in_user
+  before_action :authenticate_user!
 
   def show
     @exam = @questions_exam.exam

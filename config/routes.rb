@@ -4,13 +4,12 @@ Rails.application.routes.draw do
     get "/home", to: "static_pages#home"
     get "/signup", to: "users#new"
     post "/signup", to: "users#create"
-    get "/login", to: "sessions#new"
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
+    get "users/:id", to: "users#show", as: :single_user
     get "/subject", to: "subjects#new"
     post "/subject", to: "subjects#create"
 
-    resources :users
+    devise_for :users, controllers: {sessions: "sessions"}
+    resources :users, only: %i(show edit update)
     resources :subjects
     resources :questions
     resources :exams do
