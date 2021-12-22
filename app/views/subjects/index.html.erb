@@ -27,6 +27,8 @@
       </tbody>
     </thead>
   </table>
-  <%= link_to t(".new"), new_subject_path, class: "btn btn-outline-success" %>
+  <% if can? :manage, @subjects %>
+    <%= link_to t(".new"), new_subject_path, class: "btn btn-outline-success" %>
+  <% end %>
   <%= paginate @subjects, theme: "twitter-bootstrap-3", pagination_class: "pagination-sm" %>
 </section>

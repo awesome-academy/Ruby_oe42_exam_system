@@ -21,5 +21,7 @@
       </tbody>
     </thead>
   </table>
-  <%= link_to t(".add_exams"), new_exam_path, class: "btn btn-outline-success" %>
+  <% if can? :manage, @exam %>
+    <%= link_to t(".add_exams"), new_exam_path, class: "btn btn-outline-success" %>
+  <% end %>
 </section>

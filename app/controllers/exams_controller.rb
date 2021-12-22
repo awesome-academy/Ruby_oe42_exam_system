@@ -2,6 +2,7 @@ class ExamsController < ApplicationController
   before_action :find_by_exam, only: %i(show update destroy)
   before_action :authenticate_user!
   before_action :load_questions, only: %i(new create show)
+  authorize_resource
 
   def index
     @exam = Exam.all.page(params[:page]).includes(:subject, :user)

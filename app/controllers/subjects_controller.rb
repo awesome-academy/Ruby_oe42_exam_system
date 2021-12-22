@@ -1,6 +1,7 @@
 class SubjectsController < ApplicationController
   before_action :find_by_subject, only: %i(edit destroy)
   before_action :authenticate_user!
+  authorize_resource
 
   def index
     @subjects = Subject.includes(:user)

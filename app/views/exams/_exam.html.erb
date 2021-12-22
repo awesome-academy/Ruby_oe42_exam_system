@@ -12,7 +12,7 @@
     <%= link_to exam.user_name , exam.user %>
   </td>
   <td>
-    <% if current_user? exam.user %>
+    <% if can? :manage, exam %>
       <%= button_to t(".delete"), {action: "destroy", id: exam.id}, method: :delete, data: {confirm: t(".sure")} %>
     <% end %>
   </td>

@@ -11,7 +11,7 @@
         </li>
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to t(".user"), current_user, class: "nav-link" %>
+            <%= link_to t(".user"), user_path(current_user), class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to t(".list_exam"), exams_path, class: "nav-link" %>
