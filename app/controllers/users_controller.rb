@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, :load_user, :logged_in_supervisor
+  before_action :authenticate_user!
+  before_action :load_user, except: %i(index create)
+  before_action :logged_in_supervisor, except: :show
   before_action :correct_user, only: %i(edit update)
+  authorize_resource
 
   def index
     @users = User.all.page(params[:page]).per Settings.show_5

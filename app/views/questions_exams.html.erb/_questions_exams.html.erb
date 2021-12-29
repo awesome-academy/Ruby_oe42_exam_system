@@ -20,7 +20,7 @@
           </li>
           <li>
             <span class="answer">
-              <% if current_user.suppervisor? %>
+              <% if can? :manage, question %>
                 <% if question.answers.any? %>
                   <%= ".answer" %>
                   <ul>

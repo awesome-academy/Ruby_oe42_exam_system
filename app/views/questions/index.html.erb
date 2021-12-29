@@ -1,7 +1,10 @@
 <div class="container">
   <% provide :title, t(".title") %>
   <h2><%= t ".header" %></h2>
-  <%= link_to t(".add_question"), new_question_path, class: "btn btn-lg btn-light rounded" %>
+  <!--search cau hoi -->
+  <% if can? :manage, @questions %>
+    <%= link_to t(".add_question"), new_question_path, class: "btn btn-lg btn-light rounded" %>
+  <% end %>
   <ul class="list-group">
     <% if @questions.any? %>
       <%= render @questions %>

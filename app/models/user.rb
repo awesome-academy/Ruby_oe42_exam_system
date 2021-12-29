@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :recoverable,
+         :rememberable, :validatable
 
   VALID_EMAIL_REGEX = Settings.valid_email_regex
   USER_PARAMS = %i(name email role password password_confirmation).freeze
