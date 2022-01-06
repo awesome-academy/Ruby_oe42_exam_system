@@ -7,6 +7,7 @@ class Question < ApplicationRecord
 
   delegate :name, to: :user, prefix: true
   has_many :answers, dependent: :destroy
+  has_many :questions_exams, dependent: :destroy
   has_many :exams, through: :questions_exams
 
   accepts_nested_attributes_for :answers, allow_destroy: true

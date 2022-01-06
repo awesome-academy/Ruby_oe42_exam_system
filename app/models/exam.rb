@@ -8,10 +8,8 @@ class Exam < ApplicationRecord
   delegate :suppervisor, :trainee, :admin, :name, to: :users, prefix: :user
   delegate :name, to: :subject, prefix: true
 
-  has_many :questions, through: :questions_exams
-  has_many :users, dependent: :destroy
   has_many :questions_exams, dependent: :destroy
-  has_many :subjects, dependent: :destroy
+  has_many :questions, through: :questions_exams
   has_many :tests, dependent: :destroy
 
   accepts_nested_attributes_for :questions_exams, allow_destroy: true

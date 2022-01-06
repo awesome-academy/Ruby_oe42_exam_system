@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: Settings.max_name}
   validates :email, presence: true,
             format: {with: VALID_EMAIL_REGEX},
-            uniqueness: {case_sensitive: false}
+            uniqueness: true
   enum role: {trainee: 0, suppervisor: 1, admin: 2}
 
   validates :password, presence: true, length: {minimum: Settings.min_pass},
